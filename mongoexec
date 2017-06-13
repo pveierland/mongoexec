@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+import os
+import subprocess
+import sys
+
+# If the second file is an existing file, assume that this is the script
+# to be executed. Otherwise, assume that it is the optional shebang argument.
+mongo_args = '' if os.path.exists(sys.argv[1]) else sys.argv.pop(1)
+
+mongo_script_path = sys.argv[1]
+mongo_script_args = sys.argv[2:]
+
+command = ['/usr/bin/env', 'mongo']
+
+if mongo_args:
+    command.extend(mongo_args.split())
+
+command.extend(['--eval', 'var args=[{}]'.format(','.join(mongo_script_args))])
+command.append(mongo_script_path)
+
+subprocess.run(command)
