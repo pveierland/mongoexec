@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import json
 import os
@@ -22,7 +22,7 @@ for arg in mongo_script_args:
         variable_assignments['args'].append(json.loads(arg))
     except:
         if '=' in arg:
-            key, value = arg.split('=', maxsplit=1)
+            key, value = arg.split('=', 1)
 
             try:
                 value = json.loads(value)
@@ -40,4 +40,4 @@ if variable_assignments:
 
 command.append(mongo_script_path)
 
-subprocess.run(command)
+subprocess.call(command)

@@ -1,4 +1,4 @@
 #!/usr/bin/mongoexec --quiet
 
-printjson(args);
-printjson(mykey);
+print('args=' + JSON.stringify(args));
+print('mykey=' + JSON.stringify(mykey));

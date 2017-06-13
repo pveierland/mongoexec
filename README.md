@@ -22,8 +22,8 @@ The `--quiet` represents an optional argument which will be passed to the `mongo
 
 ```
 $ ./example.js 42 hi "Hello, World!" mykey=myvalue
-[ 42, "hi", "Hello, World!" ]
-"myvalue"
+args=[42,"hi","Hello, World!"]
+mykey="myvalue"
 ```
 
 NB: Remember to make the script executable using `chmod +x example.js`.
