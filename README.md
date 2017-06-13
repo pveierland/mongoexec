@@ -4,7 +4,7 @@ Wrapper for executing scripts from command line with MongoDB.
 
 ## Installation
 
-Place `mongoexec` in some directory which is part of the `$PATH` variable, e.g:
+Place `mongoexec` in an appropriate directory, e.g:
 
 ```
 sudo wget -O /usr/bin/mongoexec https://raw.githubusercontent.com/pveierland/mongoexec/master/mongoexec
