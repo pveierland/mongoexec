@@ -18,11 +18,12 @@ Place a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) at the start of 
 #!/usr/bin/mongoexec --quiet
 ```
 
-The `--quiet` represents an optional argument which will be passed to the `mongo` executable. Arguments to the script can be passed on the command line, and will be available as the `args` array within the script. Remember that strings must be appropriately quoted.
+The `--quiet` represents an optional argument which will be passed to the `mongo` executable. Positional arguments to the script can be passed on the command line, and will be available as the `args` array within the script. Keyword arguments to the script can also be passed on the command line and will be available as the given variable name within the script. Values will fall back to be parsed as strings, such that unquoted values can be used on the command line.
 
 ```
-$ ./example.js 42 "\"Hello, World\!\""
-[ 42, "Hello, World!" ]
+$ ./example.js 42 hi "Hello, World!" mykey=myvalue
+[ 42, "hi", "Hello, World!" ]
+"myvalue"
 ```
 
 NB: Remember to make the script executable using `chmod +x example.js`.
