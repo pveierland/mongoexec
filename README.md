@@ -4,10 +4,11 @@ Wrapper for executing scripts from command line with MongoDB.
 
 ## Installation
 
-Place `mongoexec` in an appropriate directory, e.g:
+Place `mongoexec` in a directory listed in your `$PATH` environment variable and make it executable, e.g:
 
 ```
 sudo wget -O /usr/bin/mongoexec https://raw.githubusercontent.com/pveierland/mongoexec/master/mongoexec
+sudo chmod +rx /usr/bin/mongoexec
 ```
 
 ## Usage
@@ -25,8 +26,6 @@ $ ./example.js 42 hi "Hello, World!" mykey=myvalue
 args=[42,"hi","Hello, World!"]
 mykey="myvalue"
 ```
-
-NB: Remember to make the script executable using `chmod +x example.js`.
 
 ## License
 
